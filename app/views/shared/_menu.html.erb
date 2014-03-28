@@ -1,0 +1,9 @@
+<ul>
+  <li><%= link_to 'Home', root_url   %></li>
+  <% if current_user.present? %>
+  <li><%= link_to 'Profile', user_path   %></li>
+  <% else %>
+  <li><%= link_to 'Log in', login_path   %></li>
+   <%end%>
+</ul>
+

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>PROJECT1</title>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+  <link href='http://fonts.googleapis.com/css?family=Monoton' rel='stylesheet' type='text/css'>
+</head>
+<body>
+<div id="header">
+    <h1 id="title" id="headline"><a href="/">
+    Tucan</a><img id="tucan" src="http://dealswebkinz.info/wp-content/uploads/2009/01/flying-toucan.gif"></h1>
+</div>
+<div style="height: 100px; width:100%;"></div>
+<%= yield %>
+
+</body>
+</html>

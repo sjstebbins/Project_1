@@ -1,0 +1,31 @@
+== README
+
+This README would normally document whatever steps are necessary to get the
+application up and running.
+
+Things you may want to cover:
+
+* Ruby version - **1.9.3p484**
+
+* System dependencies
+
+* Configuration
+
+* Database creation
+
+* Database initialization
+
+* How to run the test suite
+
+* Services (job queues, cache servers, search engines, etc.)
+
+* Deployment instructions
+
+* ...
+
+<h3> Pivotal Tracker: <a href="https://www.pivotaltracker.com/s/projects/1047174">https://www.pivotaltracker.com/s/projects/1047174 </a></h3>
+
+<h3> ERD: <a href="http://imgur.com/fgnnvx7">http://imgur.com/fgnnvx7</a></h3>
+
+Please feel free to use a different markup language if you do not plan to run
+<tt>rake doc:app</tt>.
