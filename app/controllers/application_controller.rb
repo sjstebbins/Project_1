@@ -11,11 +11,22 @@ helper_method :current_user
     end
   end
 
+def admin?
+  return current_user && current_user.admin
+end
+
   def authenticate
     if current_user == nil
       redirect_to login_path
     end
   end
+
+  def require_authorization
+    if !current_user.admin
+      redirect_to root_path
+    end
+  end
+
 
 end
 

@@ -15,9 +15,25 @@
   * {
     font-family: Verdana, Arial, sans-serif;
   }
+  body{
+    background: rgba(0,0,0,.1);
+  }
+  .bg{
+     background: url("http://www.fightersgeneration.com/nx4/game/kofxi/kofxi-stage5.gif");
+     background-size: 100%;
+     background-repeat: no-repeat;
+     background-color: rgba(0,0,0,.1);
+  }
   nav{
     text-decoration:none;
     width:100%;
+  }
+  li{
+    text-decoration: none;
+    display: inline;
+    margin: 5px;
+    font-family: "Monoton";
+    color: rgba(0,0,0,.3);
   }
   ul{
     text-decoration: none;
@@ -31,8 +47,41 @@
     color:#000;
   }
   a:hover {
-    color:#33F;
+    color:orange;
   }
+
+  table{
+     border: 1px solid black;
+     background: white;
+  }
+  form{
+    width:100%;
+    background: rgba(255,255,255,.3);
+  }
+  p{
+    margin-left: 20px;
+    font-family: 'Alegreya Sans'
+  }
+  h3{
+    font-family: 'Helvetica';
+      color: rgba(0,0,0,.7)
+  }
+
+ .thumbnail{
+    height:100px;
+    margin-left: 10px;
+    border: 1px solid white;
+    border-radius:5px;
+    max-width: 175px;
+ }
+.categories{
+  width: 100%;
+  position:fixed;
+  margin: 0 auto;
+  z-index:1001;
+  margin-top: -79px;
+  margin-left: 18%;
+}
   .button {
     background: -webkit-linear-gradient(top,#008dfd 0,#0370ea 100%);
     border: 1px solid #076bd2;
@@ -74,14 +123,121 @@
     text-align: left;
     vertical-align: top;
   }
+  .keywords{
+    display:inline;
+    float:right;
+    width:70%;
+    margin-top: -175px;
+  }
 
+  .search{
+    border: 1px solid gray;
+    border-radius:5px;
+    margin:30px;
+    height:200px;
+    background: white;
+    width:93%;
+    display:inline-block;
+  }
+
+  .wikisearch{
+    border: 1px solid gray;
+    border-radius:5px;
+    margin:30px;
+    height:100px;
+    background: white;
+    width:93%;
+    display:inline-block;
+  }
+  .searchtitle{
+    margin-left: 40px;
+  }
+  .wikititle{
+    margin-left: 40px;
+  }
+  .searchsnippet{
+    margin-left:20% ;
+    margin-right: 10%;
+  }
+   .wikisnippet{
+    margin-left:10% ;
+    margin-top: -35px;
+    margin-right: 10%;
+  }
+   .searchimage{
+      margin-top: -50px;
+      margin-left: 30px;
+  }
+  .music{
+    margin-left:30px;
+  }
+  .video-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    padding-top: 30px; height: 0; overflow: hidden;
+}
+
+.video-container iframe,
+.video-container object,
+.video-container embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+#welcome{
+  float:right;
+  width: 50%;
+  margin-right: 10%;
+  margin-top: -50px;
+  border: 1px solid rgba(0,0,0,.1);
+  border-radius: 5px;
+  background: rgba(255,255,255,0.9);
+  padding: 30px;
+
+}
+  #keywords{
+    margin:20px;
+    color:orange;
+    font-family: 'Monoton';
+
+  }
+  #mainmenu{
+    text-decoration: none;
+    float:right;
+    margin-right:70px;
+     margin-top: 40px;
+  }
   #title{
     font-family: 'Monoton';
     font-size: 40px;
     font-weight: 300;
-    text-align: center;
   }
+  #header{
+    position:fixed;
+    height:100px;
+    width: 100%;
+    background: white;
+    border: solid rgba(0,0,0,.5) 1px;
+    margin-left: -10px;
+    margin-top: -10px;
+    padding: 10px;
+    display:inline;
+    z-index:1000;
 
+  }
+#headerbottom{
+    position:fixed;
+    height:15px;
+    width: 100%;
+    background: -webkit-linear-gradient(top, rgba(240,140,0,.5), rgba(0,0,0,0));
+    border: none;
+    margin-left: -10px;
+    margin-top: 112px;
+    padding: none;
+    display:inline;
+    z-index:1000;
   }
   #info {
     font-size: 20px;
@@ -96,6 +252,7 @@
     padding: 15px;
     text-align: left;
     min-height: 150px;
+    background: white;
   }
   #start_button {
     border: 0;
@@ -103,12 +260,85 @@
     padding: 0;
   }
   #tucan{
-    width: 50px;
-    height:50px;
+    width: 250px;
+    height:72px;
+    border:none;
+    margin:none;
+    margin-bottom: -10px;
+    margin-top: 30px;
   }
-  #header{
-    width: 100%;
-    height: 100px;
-    position:fixed;
+  #tucan:hover{
+    width: 250px;
+    height: 72px;
+    background: url("http://imgur.com/g0HQNuV.png");
+    background-size: 100%;
   }
+  form {
+  background: rgba(255,255,255,.8);
+  border: 1px solid #d0d2d5;
+  border-bottom: 1px solid black;
+  border-radius: 4px;
+  margin: 0 0 20px 30px;
+  padding: 20px;
+  width: 20%;
+}
+label {
+  color: rgba(0,0,0,.7);
+  display: block;
+  font-weight: bold;
+}
+input {
+  background: #fff;
+  border-radius: 4px;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.1), 0 1px 0 #fff;
+  color: #555;
+  font: 13px/20px 'Droid Sans', Arial, 'Helvetica Neue', 'Lucida Grande', sans-serif;
+  margin: 0 0 20px 0;
+  padding: 5px;
+  width: 200px;
+}
+fieldset {
+  background: linear-gradient(top, #ebeced, #dedfe0);
+  border: none;
+  border-top: 1px solid #d0d2d5;
+  border-radius: 0 0 4px 4px;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.75);
+  margin: 5px 0 -20px -20px;
+  padding: 18px 20px;
+  width: 212px
+}
+fieldset input {
+  margin: 0;
+  width: auto;
+}
+#login_submit {
+  background: linear-gradient(top, #687587, #404853);
+  border: none;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.3), 0 1px 0 rgba(255, 255, 255, 0.75);
+  color: #fff;
+  font-weight: bold;
+  float: left;
+  padding: 5px 10px;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.6);
+}
+#login_submit:hover {
+  background: linear-gradient(top, #5a6675, #333942);
+}
+#login_submit:active {
+  background: #333942;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.75), 0 1px 0 rgba(255, 255, 255, 0.75);
+}
+fieldset label {
+  color: #888;
+  cursor: pointer;
+  float: left;
+  font-size: 12px;
+  font-weight: normal;
+  margin: 5px 0 0 20px;
+}
+fieldset label input {
+  margin: -2px 2px 0 0;
+  padding: 0;
+}
+
 </style>

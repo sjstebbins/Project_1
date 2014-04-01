@@ -1,5 +1,12 @@
-<%= render "shared/menu" %>
-<%= render 'textinputform' %>
-
-
+<body class="bg">
+  <h3 style="position:fixed;font-family: 'Alegreya Sans'; margin-top: -55px; margin-left: 20%; z-index:1001;">You Can With Tucan</h3>
+<div style="text-align: center; margin-top:30px;" >
+  <%= button_to "Speech Input", { :action => "new2" }, :method => :get %>
+</div>
+<div id="welcome">
+  <h3> Welcome to Tucan.</h3>
+  <p> Tucan is better than a parrot sitting on your shoulder that just mimics everything you say. With Tucan, you can record conversations or input text and be provided a portal to relevant information about that conversation. No more taking down notes to remember to look something up. Tucan takes the notes, sets the reminders, and provides you with the best sources to start your further inquiry. </p>
+</div>
+<%= render "shared/textinputform" %>
+</body>
 

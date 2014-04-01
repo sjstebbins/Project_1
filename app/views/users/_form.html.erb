@@ -1,14 +1,5 @@
 <%= form_for(@user) do |f| %>
 
-  <% if @user.errors.any? %>
-    Please correct the following errors:
-    <ul>
-      <% @user.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-    </ul>
-  <% end %>
-
   <div class="field">
     <%= f.label :name %><br>
     <%= f.text_field :name %>
@@ -25,10 +16,7 @@
     <%= f.label :password_confirmation %><br>
     <%= f.password_field :password_confirmation %>
   </div>
-  <div class="field">
-    <%= f.label :admin %><br>
-    <%= f.check_box :admin %>
-  </div>
+
   <div class="actions">
     <%= f.submit %>
   </div>

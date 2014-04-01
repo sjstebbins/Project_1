@@ -1,0 +1,11 @@
+<%= form_for(@entry) do |f| %>
+
+
+    <%= f.label :input %><br>
+   <div id="textinput"><%= f.text_area :input,  :rows => "20", :cols => "32" %></div>
+   </div>
+
+  <div style="text-align:center" class="actions">
+    <%= f.submit %>
+<% end %>
+

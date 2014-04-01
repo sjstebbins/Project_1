@@ -9,45 +9,7 @@
   <%= @user.email %>
 </p>
 
-<p>
-  <strong>Admin:</strong>
-  <%= @user.admin ? "Yes" : "No" %>
-</p>
+<p><%= link_to 'Edit', edit_user_path(@user) %> </p>
 
-<h3>Purchased songs</h3>
 
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Album</th>
-      <th>Genre</th>
-      <th>Artist</th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @songs.each do |song| %>
-      <tr>
-        <td><%= song.title %></td>
-        <td><%= song.album %></td>
-        <td><%= song.genre %></td>
-        <td><%= song.artist.name %></td>
-        <td><%= link_to 'Show', song %></td>
-        <td>
-          <% if !@purchased_songs.include?(song) %>
-            <%= form_tag("/purchase", method: "post") do %>
-              <input type="hidden" name="song_id" value="<%= song.id %>">
-              <input type="submit" value="Purchase">
-            <% end %>
-          <% end %>
-        </td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+<%= render "shared/entriestable"%>

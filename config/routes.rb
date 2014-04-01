@@ -6,13 +6,14 @@ root :to => 'entries#new'
   post '/sessions', to: 'sessions#create'
   get '/logout', to: 'sessions#destroy'
 
-resources :home
 resources :users
 resources :entries do
     collection do
       get 'search'
     end
 end
+get '/entries/:id/:keyword', to: 'entries#keyword'
+get '/new2', to: 'entries#new2'
 
 
 

@@ -1,19 +1,23 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>PROJECT1</title>
+  <title>Tucan</title>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
   <link href='http://fonts.googleapis.com/css?family=Monoton' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Alegreya+Sans' rel='stylesheet' type='text/css'>
+  <script src="http://connect.soundcloud.com/sdk.js"></script>
 </head>
+
 <body>
 <div id="header">
-    <h1 id="title" id="headline"><a href="/">
-    Tucan</a><img id="tucan" src="http://dealswebkinz.info/wp-content/uploads/2009/01/flying-toucan.gif"></h1>
+    <a href="/">
+    <img id="tucan" src="http://imgur.com/9rLRPkD.png"></a><%= render "shared/menu" %>
 </div>
-<div style="height: 100px; width:100%;"></div>
+<div id="headerbottom"></div>
+<div style="height: 120px; width:100%;"></div>
 <%= yield %>
-
+<h3 style=" position:fixed; float:right ; margin-left: 95%; bottom: 10px; color: rgba(0,0,0,.4)"><a href="#">Top</a></h3>
 </body>
 </html>

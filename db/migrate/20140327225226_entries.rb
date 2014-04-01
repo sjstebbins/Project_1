@@ -3,6 +3,7 @@ class Entries < ActiveRecord::Migration
     create_table :entries do |t|
       t.text :input
       t.text :keywords
+      t.timestamps
     end
   end
 end

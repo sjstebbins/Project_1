@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
 
   before_action :authenticate, only: [:edit, :update, :destroy]
+  before_action :authorization, only: [:edit, :update, :destroy]
 
   def index
     @users = User.all
@@ -8,8 +9,8 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    @songs = @user.songs
-    @purchased_songs = current_user ? current_user.songs : []
+    @entries= Entry.all
+    @entry = Entry.find(params[:id])
   end
 
   def new
@@ -18,12 +19,11 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
-    @user.balance = 0
 
     if @user.save
       redirect_to @user
     else
-      render 'new'
+      render 'show'
     end
   end
 

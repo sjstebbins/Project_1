@@ -12,10 +12,11 @@
 
 
 <h3> KeyWords </h3>
+<!-- <div style="width:90%; height:2px; background:rgba(0,0,0,.05); margin: 0 auto"></div> -->
 
 <div class="keywordbox">
-<form action="/entries/<%= @entry.id %>/<%= params[:number] %>" method="get">
-  <label for="number">#Number of Keywords</label>
+<form action="/entries/#{params[:id]}" method="get">
+  <label for="number">Keywords to Retrieve</label>
   <select name="number">
     <option value="1">1</option>
     <option value="2">2</option>
@@ -32,26 +33,23 @@
 </form><br>
 
   <div class="keywords">
-      <% @array.each do |keyword| %>
-       <a id="keywords" href="/entries/#{@entry.id}/#{keyword}"><%= keyword %></a>
+      <% @kw.each do |keyword| %>
+       <a id="keywords" href="/ent"><%= keyword %></a>
       <% end %>
   </div>
 </div>
 <br>
-<div style="width:95%; height:2px; background:rgba(0,0,0,.05); margin: 0 auto"></div>
 
-<br>
-
-<%#<h3 id="general"> General </h3>
+<h3 id="general"> General </h3>
 <div style="width:95%; height:3px; background:rgba(0,0,0,.2); margin: 0 auto"></div>
   <% i = 0 %>
-<%#    <% while i < 3 do %>
-<%#      <div class="search">
-<%#       <h4 class="searchtitle"><a href=<%= @google_links[i] %>><%#<%= @google_titles[i] %></a><br></h4>
-<%#        <div class="searchsnippet"><p><%= @google_snippets[i] %></p></div>
-<%#      <div class="searchimage"><img class="thumbnail" src=<%= @google_images[i]["cse_image"][0]["src"] %>></div>
-<%#        <% i += 1 %>
-<%#      </div>
+    <% while i < 3 do %>
+      <div class="search">
+       <h4 class="searchtitle"><a href=<%= @google_links[i] %>><%= @google_titles[0 + i] %></a><br></h4>
+        <div class="searchsnippet"><p><%= @google_snippets[i] %></p></div>
+        <div class="searchimage"><img class="thumbnail"src="<%= @google_images[i]["cse_thumbnail"][0]["src"] %>"></div>
+        <% i += 1 %>
+      </div>
     <%end %>
 
 <h3 id="music"> Music </h3>
@@ -63,25 +61,26 @@
       </div>
 <%end%>
 
-<!-- <h3 id="video"> Video </h3>
-<%#if @youtube[0]["id"]["videoId"] == nil %>
-<p> I'm sorry, but there are no videos that match your entry </p>
-<%# else %>
-      <div class="video-container">
-         <iframe src="http://www.youtube.com/embed/<%#= @youtube[0]["id"]["videoId"]%>" frameborder="0" width="100%" hheight="400"></iframe>
+<%#<h3 id="video"> Video </h3>
+<% if @youtube[0]["id"]["videoId"] == nil%>
+<%#<p> I'm sorry, but there are no videos that match your entry </p>
+<% else %>
+<%#      <div class="video-container">
+         <iframe src="http://www.youtube.com/embed/<%= @youtube[0]["id"]["videoId"]%><%#{}" frameborder="0" width="100%" h<%#height="400"></iframe>
       </div>
-<%#end%> -->
+<%end%>
 
 
 <h3 id="info"> Info </h3>
 <% i = 0 %>
 <% while i < 3 do %>
-  <div class="wikisearch">
+  <div class="search">
     <h4 class="wikititle"><%= @wiki_titles[0 + i] %></h4><br>
      <p class="wikisnippet"><%= strip_tags(@wiki_snippet[0 + i]) %></p><br>
   </div>
 <% i += 1 %>
 <%end %>
+
 
 
 
