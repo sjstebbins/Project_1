@@ -10,6 +10,14 @@
 <h3> Entry </h3>
 <p><%= @entry.input %></p>
 
+<div class="notify">
+  <p> Send yourself a notification email to follow up on this entry </p>
+<%= form_tag(notify_path) do %>
+<%= hidden_field_tag(:transcipt, @entry.input) %>
+<%= submit_tag("Notify") %>
+<% end %>
+</div>
+
 
 <h3> KeyWords </h3>
 
@@ -33,7 +41,7 @@
 
   <div class="keywords">
       <% @array.each do |keyword| %>
-       <a id="keywords" href="/entries/#{@entry.id}/#{keyword}"><%= keyword %></a>
+       <a id="keywords" href="/entries/<%= @entry.id %>/<%= keyword %>"><%= keyword %></a>
       <% end %>
   </div>
 </div>
@@ -42,36 +50,32 @@
 
 <br>
 
-<%#<h3 id="general"> General </h3>
+<h3 id="general"> General </h3>
 <div style="width:95%; height:3px; background:rgba(0,0,0,.2); margin: 0 auto"></div>
-  <% i = 0 %>
-<%#    <% while i < 3 do %>
-<%#      <div class="search">
-<%#       <h4 class="searchtitle"><a href=<%= @google_links[i] %>><%#<%= @google_titles[i] %></a><br></h4>
-<%#        <div class="searchsnippet"><p><%= @google_snippets[i] %></p></div>
-<%#      <div class="searchimage"><img class="thumbnail" src=<%= @google_images[i]["cse_image"][0]["src"] %>></div>
-<%#        <% i += 1 %>
-<%#      </div>
-    <%end %>
+<% @google_sorted.each do |result| %>
+
+      <div class="search">
+       <h4 class="searchtitle"><a href="<%= result[:link]%>"><%= result[:title] %></a><br></h4>
+        <div class="searchsnippet"><p><%= result[:snippet] %></p></div>
+      <div class="searchimage"><img class="thumbnail" src="<%= result[:image] %>"></div>
+      </div>
+<%end %>
 
 <h3 id="music"> Music </h3>
-<% if @soundcloud[0]["id"] == nil%>
-<p> I'm sorry, but there are no tracks that match your entry </p>
-<% else %>
       <div class="music">
         <iframe width="45%" height="400" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/<%= @soundcloud[0]["id"]%>&amp;auto_play=false&amp;hide_related=false&amp;visual=true"></iframe>
       </div>
-<%end%>
 
-<!-- <h3 id="video"> Video </h3>
-<%#if @youtube[0]["id"]["videoId"] == nil %>
-<p> I'm sorry, but there are no videos that match your entry </p>
-<%# else %>
+<!--  <h3 id="video"> Video </h3>
       <div class="video-container">
          <iframe src="http://www.youtube.com/embed/<%#= @youtube[0]["id"]["videoId"]%>" frameborder="0" width="100%" hheight="400"></iframe>
-      </div>
-<%#end%> -->
+      </div> -->
 
+
+<!-- <h3> Instagram </h3>
+<div class="instagram"
+<iframe src="//instagram.com/p/mQF0LBowpt/embed/" width="45%" height="400" frameborder="0" scrolling="no" allowtransparency="true"></iframe>
+</div> -->
 
 <h3 id="info"> Info </h3>
 <% i = 0 %>

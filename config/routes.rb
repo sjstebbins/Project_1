@@ -15,6 +15,9 @@ end
 get '/entries/:id/:keyword', to: 'entries#keyword'
 get '/new2', to: 'entries#new2'
 
+post '/notify', to: 'entries#notify'
+
+
 
 
   # The priority is based upon order of creation: first created -> highest priority.
