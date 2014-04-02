@@ -66,10 +66,10 @@
         <iframe width="45%" height="400" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/<%= @soundcloud[0]["id"]%>&amp;auto_play=false&amp;hide_related=false&amp;visual=true"></iframe>
       </div>
 
-<!--  <h3 id="video"> Video </h3>
+  <h3 id="video"> Video </h3>
       <div class="video-container">
-         <iframe src="http://www.youtube.com/embed/<%#= @youtube[0]["id"]["videoId"]%>" frameborder="0" width="100%" hheight="400"></iframe>
-      </div> -->
+         <iframe src="http://www.youtube.com/embed/<%= @youtube[41..100]%>" frameborder="0" width="100%" hheight="400"></iframe>
+      </div>
 
 
 <!-- <h3> Instagram </h3>

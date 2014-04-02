@@ -42,7 +42,7 @@ def show
      @google_sorted << {
       title: result["title"],
       snippet: result["snippet"],
-      # image: (result["pagemap"].nil? || result["pagemap"]["cse_thumbnail"] ? nil : result["pagemap"]["cse_thumbnail"][0]["src"]),
+      image:  result["pagemap"]["cse_image"][0]["src"],
       link: result["link"]
     }
   end
@@ -62,7 +62,7 @@ def keyword
   @entry = Entry.find(params[:id])
   @keywords = @entry.alchemy
   @array = @keywords.map { |kw| kw["text"] }
-  @keyword = @array[params[:keyword]]
+  @keyword = @array.index(params[:keyword])
 
   #wiki
   @wiki= Entry.wiki(@array[@keyword])
@@ -75,7 +75,7 @@ def keyword
      @google_sorted << {
       title: result["title"],
       snippet: result["snippet"],
-      # image: (result["pagemap"].nil? || result["pagemap"]["cse_thumbnail"] ? nil : result["pagemap"]["cse_thumbnail"][0]["src"]),
+      image:  result["pagemap"]["cse_image"][0]["src"],
       link: result["link"]
     }
   end
