@@ -204,7 +204,6 @@
 #video{
   font-family: 'Monoton';
     font-size: 20px;
-     margin-left: 10%;
     text-align: left;
     color: rgba(0,0,0,.8);
     background: rgba(255,255,255,.6);
@@ -212,7 +211,6 @@
 #music{
   font-family: 'Monoton';
     font-size: 20px;
-     margin-left: 10%;
     text-align: left;
     color: rgba(0,0,0,.8);
     background: rgba(255,255,255,.6);
@@ -220,7 +218,6 @@
 #general{
   font-family: 'Monoton';
     font-size: 20px;
-    margin-left: 10%;
     text-align: left;
     color: rgba(0,0,0,.8);
     background: rgba(255,255,255,.6);
@@ -281,7 +278,7 @@
   #info {
     font-family: 'Monoton';
     font-size: 20px;
-    margin-left: 10%;
+
     text-align: left;
     color: rgba(0,0,0,.8);
     background: rgba(255,255,255,.6);

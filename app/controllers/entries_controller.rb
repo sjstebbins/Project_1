@@ -20,16 +20,6 @@ def show
   @entry = Entry.find(params[:id])
   @keywords = @entry.alchemy
   @array = @keywords.map { |kw| kw["text"] }
-  # @number = params[:number].to_i
-  # if  @number == nil
-  #   @number_of_keywords = 5
-  # else
-  #   @number_of_keywords = @number
-  # end
-  # @kw = []
-  # @number_of_keywords.times do
-  #   @kw << @array.shift
-  # end
 
   #wiki
   @wiki= Entry.wiki(@array[0])
@@ -39,12 +29,15 @@ def show
   @google= Entry.google(@array[0])
   @google_sorted = []
   @google.each do |result|
+    begin
      @google_sorted << {
       title: result["title"],
       snippet: result["snippet"],
       image:  result["pagemap"]["cse_image"][0]["src"],
       link: result["link"]
     }
+  rescue
+  end
   end
 
   #souncloud
