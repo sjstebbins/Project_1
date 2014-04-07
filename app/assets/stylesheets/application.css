@@ -11,10 +11,11 @@
  *= require_self
  *= require_tree .
  */
- <style>
-  * {
+
+/*
+  {
     font-family: Verdana, Arial, sans-serif;
-  }
+  }*/
   body{
     background: rgba(0,0,0,.1);
   }
@@ -380,4 +381,4 @@ fieldset label input {
   padding: 0;
 }
 
-</style>
+
