@@ -40,6 +40,8 @@ gem 'pry-rails'
 
 gem 'bcrypt'
 
+gem 'unicorn'
+
 group :development, :test do
   gem 'rspec-rails', '~> 3.0.0.beta'
 end
