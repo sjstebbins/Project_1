@@ -19,6 +19,7 @@ input = arr.gsub(" ","%20")
   return wikireturn
 end
 
+
 # def self.wiki_images(arr)
 # input = arr.gsub(" ","%20")
 #   results = HTTParty.get("http://en.wikipedia.org/w/api.php?format=json&action=query&prop=titles=#{input}")
