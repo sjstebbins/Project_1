@@ -77,4 +77,11 @@ PROJECT1::Application.configure do
 
   # Use default logging formatter so that PID and timestamp are not suppressed.
   config.log_formatter = ::Logger::Formatter.new
+
+  # ALCHEMY = "9ddce0957447a5027cf1a73b860383823614057f"
+  # WIKI =
+  # GOOGLE =
+  # SOUNDCLOUD =
+
 end
+
