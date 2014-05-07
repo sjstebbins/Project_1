@@ -1,3 +1,5 @@
+<%= content_tag(:div, class: "entry", id: dom_id(entry), data: {entry_info: entry} ) do %>
+
 <div class="categories">
   <ul>
     <li><a href="/entries/:id#general">General</a><li>
@@ -63,12 +65,12 @@
 
 <h3 id="music"> Music </h3>
       <div class="music">
-        <iframe width="45%" height="400" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/<%#= @soundcloud[0]["id"]%>&amp;auto_play=false&amp;hide_related=false&amp;visual=true"></iframe>
+        <iframe width="45%" height="400" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/<%= @soundcloud[0]["id"]%>&amp;auto_play=false&amp;hide_related=false&amp;visual=true"></iframe>
       </div>
 
   <h3 id="video"> Video </h3>
       <div class="video-container">
-         <iframe src="http://www.youtube.com/embed/<%#= @youtube[41..100]%>" frameborder="0" width="100%" hheight="400"></iframe>
+         <iframe src="http://www.youtube.com/embed/<%= @youtube[41..100]%>" frameborder="0" width="100%" hheight="400"></iframe>
       </div>
 
 
@@ -81,11 +83,12 @@
 <% i = 0 %>
 <% while i < 3 do %>
   <div class="wikisearch">
-    <h4 class="wikititle"><%#= @wiki_titles[0 + i] %></h4><br>
-     <p class="wikisnippet"><%#= strip_tags(@wiki_snippet[0 + i]) %></p><br>
+    <h4 class="wikititle"><%= @wiki_titles[0 + i] %></h4><br>
+     <p class="wikisnippet"><%= strip_tags(@wiki_snippet[0 + i]) %></p><br>
   </div>
 <% i += 1 %>
 <%end %>
 
 
 
+<% end %>

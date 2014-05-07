@@ -59,3 +59,9 @@ end
 # gem 'debugger', group: [:development, :test]
 
 gem 'rails_12factor', group: :production
+
+
+
+
+  # Add these gems
+  gem 'zurb-foundation'

@@ -13,7 +13,7 @@ return alchemyreturn
 end
 
 def self.wiki(arr)
-input = arr.gsub(" ","%20")
+  input = arr.gsub(" ","%20")
   results = HTTParty.get("http://en.wikipedia.org/w/api.php?format=json&action=query&list=search&srlimit=10&srsearch=#{input}")
   wikireturn = results["query"]["search"]
   return wikireturn

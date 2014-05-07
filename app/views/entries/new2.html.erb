@@ -4,4 +4,10 @@
   <%= button_to "Text Input", { :action => "new" }, :method => :get %>
 </div>
 <%= render "shared/speechinput" %>
+
+<%= form_for Entry.new, remote: true do |f| %>
+
+  <%= f.submit "Entry" %>
+<% end %>
 </body>
+

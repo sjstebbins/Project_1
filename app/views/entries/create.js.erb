@@ -1,0 +1,8 @@
+$.ajax({
+    url: '/entries/<%= @entry.id %>',
+    method: 'get',
+    dataType: 'html',
+    data: { from_ajax: true}
+  }).done( function(htmlData) {
+    $('body').append(htmlData);
+});

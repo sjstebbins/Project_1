@@ -14,3 +14,21 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+$('document').ready(function(){
+  $('#entry_input').on("keyup", handleEntryInput)
+});
+
+
+function handleEntryInput() {
+  var entryText = $(this).val();
+  console.log(entryText);
+  if (entryText.length % 10 == 0) {
+    $("form#new_entry").submit();
+  }
+}
+
+
+// function speechInput(){
+// var input = $("#final_span").text();
+
+// }

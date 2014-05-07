@@ -22,9 +22,9 @@ def show
   @array = @keywords.map { |kw| kw["text"] }
 
   #wiki
-  @wiki= Entry.wiki(@array[0])
-  @wiki_titles = @wiki.map { |title| title["title"] }
-  @wiki_snippet = @wiki.map { |snippet| snippet["snippet"] }
+  # @wiki= Entry.wiki(@array[0])
+  # @wiki_titles = @wiki.map { |title| title["title"] }
+  # @wiki_snippet = @wiki.map { |snippet| snippet["snippet"] }
   #google
   @google= Entry.google(@array[0])
   @google_sorted = []
@@ -35,9 +35,9 @@ def show
       snippet: result["snippet"],
       image:  result["pagemap"]["cse_image"][0]["src"],
       link: result["link"]
-    }
-  rescue
-  end
+     }
+    rescue
+    end
   end
 
   #souncloud
@@ -48,6 +48,10 @@ def show
   #instagram
   # @instagram = Entry.instagram(@array[0])
 
+  if params[:from_ajax]
+    render 'show', layout: false
+    return
+  end
 
 end
 
@@ -93,10 +97,13 @@ def new2
 end
 
 def create
-    entry = params[:entry]
     @entry = Entry.new(entry_params)
     if @entry.save
-        redirect_to @entry
+      respond_to do |format|
+        format.html { redirect_to @entry }
+        format.json { render json: @entry }
+        format.js   { }
+      end
     else
         redirect_to :new
     end
